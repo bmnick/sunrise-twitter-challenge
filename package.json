@@ -1,0 +1,21 @@
+{
+  "name"           : "sunrise-twitter-challenge",
+  "description"    : "A command line search client for twitter",
+  "homepage"       : "https://github.com/bmnick/sunrise-twitter-challenge",
+  "keywords"       : ["sunrise", "twitter", "search"],
+  "author"         : "Ben Nicholas <bmnic@me.com>",
+  "contributors"   : [],
+  "dependencies"   : {
+                     },
+  "scripts"        : {
+                      "start" : "node app.js"
+                     },
+  "devDependencies": {
+                      "mocha"  : "1.9.0",
+                      "should" : "1.2.2"
+                     },
+  "engines"        : { "node" : ">=0.10.5",
+                       "npm"  : ">=1.2.18"
+                     }, 
+  "version"        : "0.0.1"
+}

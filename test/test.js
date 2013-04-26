@@ -14,7 +14,9 @@ describe('TwitterSearch', function() {
   it('should return an array of tweets', function() {
     results = TwitterSearch.search('Frobdignaggle');
     
+    // Fragile, depends on a tweet existing in an external system
     results.should.be.an.instanceOf(Array);
+    results.length.should.be.above(0); 
   });
 });
 

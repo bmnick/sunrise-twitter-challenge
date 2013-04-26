@@ -1,7 +1,7 @@
 var TwitterSearch = {};
 
-TwitterSearch.search = function() {
-  return;
+TwitterSearch.search = function(searchString) {
+  return [];
 };
 
 exports.TwitterSearch = TwitterSearch;

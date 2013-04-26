@@ -7,8 +7,14 @@ describe('TwitterSearch', function() {
   });
 
   it('should have a search method', function() {
-    TwitterSearch.should.have.property('search')
-    TwitterSearch.search.should.be.an.instanceOf(Function)
+    TwitterSearch.should.have.property('search');
+    TwitterSearch.search.should.be.an.instanceOf(Function);
+  });
+
+  it('should return an array of tweets', function() {
+    results = TwitterSearch.search('Frobdignaggle');
+    
+    results.should.be.an.instanceOf(Array);
   });
 });
 

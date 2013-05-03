@@ -11,12 +11,36 @@ describe('TwitterSearch', function() {
     TwitterSearch.search.should.be.an.instanceOf(Function);
   });
 
-  it('should return an array of tweets', function() {
-    results = TwitterSearch.search('Frobdignaggle');
-    
-    // Fragile, depends on a tweet existing in an external system
-    results.should.be.an.instanceOf(Array);
-    results.length.should.be.above(0); 
+  it('should return an array of tweets', function(done) {
+    results = TwitterSearch.search('Frobdignaggle', function(results) {
+      // Fragile, depends on a tweet existing in an external system
+      results.should.be.an.instanceOf(Array);
+      results.length.should.be.above(0); 
+      done();
+    });
+  });
+
+  it('should be able to prepare a request', function() {
+    searchString = 'Frobdignaggle';
+    exemplar = {
+      host: 'search.twitter.com',
+      path: '/search.json?q=Frobdignaggle'
+    };
+
+    TwitterSearch.should.have.property('prepareRequest');
+    TwitterSearch.prepareRequest.should.be.an.instanceOf(Function);
+
+    var request = TwitterSearch.prepareRequest(searchString);
+    request.host.should.equal(exemplar.host);
+    request.path.should.equal(exemplar.path);
+  });
+
+  it('should actually fetch from twitter', function(done) {
+    TwitterSearch.search('Frobdignaggle', function(results) {
+      results.length.should.be.above(0)
+      results[0].text.should.match(/Frobdignaggle/);
+      done();
+    });
   });
 });
 

@@ -1,7 +1,7 @@
 #!/usr/local/bin/node
 
 // ==== Imports
-var TwitterSearch = require('./src/twitterSearch.js').TwitterSearch;
+var TwitterSearch = require('./src/twitterSearch.js');
 
 // ==== Constants
 var START_COLOR = "\033[94m";

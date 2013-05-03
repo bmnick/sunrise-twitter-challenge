@@ -31,4 +31,4 @@ TwitterSearch.search = function(query, callback, since_id) {
   req.end();
 };
 
-exports.TwitterSearch = TwitterSearch;
+module.exports = TwitterSearch;

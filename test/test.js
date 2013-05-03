@@ -1,5 +1,5 @@
 var should = require('should')
-    TwitterSearch = require('../src/twitterSearch.js').TwitterSearch;
+    TwitterSearch = require('../src/twitterSearch.js');
 
 describe('TwitterSearch', function() {
   it('should exist', function() {

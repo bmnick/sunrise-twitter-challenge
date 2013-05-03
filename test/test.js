@@ -32,7 +32,7 @@ describe('TwitterSearch', function() {
 
     var request = TwitterSearch.prepareRequest(searchString);
     request.host.should.equal(exemplar.host);
-    request.path.should.equal(exemplar.path);
+    request.path.should.include(exemplar.path);
   });
 
   it('should actually fetch from twitter', function(done) {
@@ -42,5 +42,11 @@ describe('TwitterSearch', function() {
       done();
     });
   });
+
+  it('should be able to take a since_id', function() {
+    var request = TwitterSearch.prepareRequest(searchString, 1520);
+    request.path.should.match(/since_id=1520/);
+    request.path.should.match(/rpp=20/);
+  })
 });
 

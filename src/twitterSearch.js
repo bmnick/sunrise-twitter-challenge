@@ -1,10 +1,11 @@
 var TwitterSearch = {};
 var http = require('http');
 
-TwitterSearch.prepareRequest = function(searchString) {
+TwitterSearch.prepareRequest = function(searchString, since_id) {
+  since_id = since_id || 0;
   return {
       host: 'search.twitter.com',
-      path: '/search.json?q=' + searchString,
+      path: '/search.json?q=' + searchString + '&rpp=20&since_id=' + since_id,
       method: 'GET',
       headers: { 'User-Agent': 'bmnick/sunrise-demo 1.0' }
     };

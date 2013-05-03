@@ -5,7 +5,8 @@ TwitterSearch.prepareRequest = function(searchString) {
   return {
       host: 'search.twitter.com',
       path: '/search.json?q=' + searchString,
-      method: 'GET'
+      method: 'GET',
+      headers: { 'User-Agent': 'bmnick/sunrise-demo 1.0' }
     };
 }
 

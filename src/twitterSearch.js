@@ -11,8 +11,8 @@ TwitterSearch.prepareRequest = function(searchString, since_id) {
     };
 }
 
-TwitterSearch.search = function(query, callback) {
-  var req = http.request(TwitterSearch.prepareRequest(query), function(res) {
+TwitterSearch.search = function(query, callback, since_id) {
+  var req = http.request(TwitterSearch.prepareRequest(query, since_id), function(res) {
     var response = '';
 
     res.on('data', function(chunk) {

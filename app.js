@@ -42,6 +42,10 @@ function fetchTweets() {
 }
 
 // ==== Main
-fetchTweets();
-setInterval(fetchTweets, 5000 );
+if (query) {
+	fetchTweets();
+	setInterval(fetchTweets, 5000 );
+} else {
+	console.log("Usage: node app.js <search_term>")
+}
 

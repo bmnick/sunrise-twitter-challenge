@@ -5,8 +5,11 @@ var TwitterSearch = require('./src/twitterSearch.js').TwitterSearch;
 var search_string = process.argv[2];
 var last_id = 0;
 
+var START_COLOR = "\033[94m";
+var END_COLOR = "\033[0m";
+
 function printTweet(tweet) {
-	console.log(tweet['from_user'] + ": " + tweet['text']);
+	console.log(START_COLOR + tweet['from_user'] + ": " + END_COLOR + tweet['text']);
 }
 
 function fetchTweets() {

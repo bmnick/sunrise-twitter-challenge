@@ -16,4 +16,4 @@ There are only two dependencies, and that is for testing. I chose to use should.
 Usage
 -----
 
-node app.js <search\_term>
+node app.js \<search\_term\>
